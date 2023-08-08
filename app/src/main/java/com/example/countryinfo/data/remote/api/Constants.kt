@@ -1,4 +1,4 @@
-package com.example.countryinfo.util.constants
+package com.example.countryinfo.data.remote.api
 
 object Constants {
     const val BASE_URL = "https://restcountries.com/v3.1/"
