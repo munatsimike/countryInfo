@@ -1,7 +1,7 @@
 package com.example.countryinfo.di
 
 import com.example.countryinfo.BuildConfig
-import com.example.countryinfo.constants.Constants.BASE_URL
+import com.example.countryinfo.util.constants.Constants.BASE_URL
 import com.example.countryinfo.data.remote.api.CountryAPiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

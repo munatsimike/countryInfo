@@ -23,5 +23,4 @@ interface CountryAPiService {
 
     @GET("region/{region}")
     suspend fun searchByCountryRegion(@Path("region") countryRegion: String): Response<List<Country>>
-
 }
