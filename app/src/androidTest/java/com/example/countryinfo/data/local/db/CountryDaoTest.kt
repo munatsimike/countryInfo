@@ -58,8 +58,8 @@ class CountryDaoTest {
                 countryDao.saveCountriesFromAPi(country)
             }
         }
+        
         result = countryDao.getAllCountries().getOrAwaitValue()
-
         assertThat(result.size).isGreaterThan(0)
     }
 }
