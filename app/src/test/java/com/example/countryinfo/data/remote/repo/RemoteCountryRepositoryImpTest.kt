@@ -1,6 +1,5 @@
 package com.example.countryinfo.data.remote.repo
 
-import com.example.countryinfo.data.common.CountryRepository
 import com.example.countryinfo.data.common.MockRepositoryImp
 import com.example.countryinfo.data.remote.api.CountryAPiService
 import com.example.countryinfo.domain.model.Country
@@ -53,7 +52,7 @@ class RemoteCountryRepositoryImpTest {
         )
 
         assertThat(countryList).isNotEmpty()
-        assertThat(countryList.all { it.currencies.PEN?.name == "Peruvian sol" }).isTrue()
+        assertThat(countryList.all { it.currencies?.PEN?.name == "Peruvian sol" }).isTrue()
     }
 
     @Test
@@ -66,7 +65,7 @@ class RemoteCountryRepositoryImpTest {
         )
 
         assertThat(countryList).isNotEmpty()
-        assertThat(countryList[0].name.common).isEqualTo("Germany")
+        assertThat(countryList[0].name?.common).isEqualTo("Germany")
     }
 
 
@@ -104,7 +103,7 @@ class RemoteCountryRepositoryImpTest {
         )
 
         assertThat(country).isNotNull()
-        assertThat(country[0].capital.contains("Tallinn")).isTrue()
+        assertThat(country[0].capital?.contains("Tallinn")).isTrue()
     }
 
     private fun getCountryList(
