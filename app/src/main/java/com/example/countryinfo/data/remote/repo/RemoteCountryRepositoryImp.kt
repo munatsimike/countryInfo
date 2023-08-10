@@ -22,6 +22,8 @@ class RemoteCountryRepositoryImp @Inject constructor(
             is MyResponse.Failure -> {
                 throw APiException(response.error)
             }
+
+            else -> {}
         }
     }
 
@@ -29,23 +31,23 @@ class RemoteCountryRepositoryImp @Inject constructor(
         return executeApiCall { countryAPiService.getAllCountries() }
     }
 
-    override suspend fun searchByCountryName(countryName: String): MyResponse<List<Country>> {
+     suspend fun searchByCountryName(countryName: String): MyResponse<List<Country>> {
         return executeApiCall { countryAPiService.searchByCountryName(countryName) }
     }
 
-    override suspend fun searchByCountryCode(countryCode: Int): MyResponse<List<Country>> {
+     suspend fun searchByCountryCode(countryCode: Int): MyResponse<List<Country>> {
         return executeApiCall { countryAPiService.searchByCountryCode(countryCode.toString()) }
     }
 
-    override suspend fun searchByCountryCurrency(countryCurrency: String): MyResponse<List<Country>> {
+     suspend fun searchByCountryCurrency(countryCurrency: String): MyResponse<List<Country>> {
         return executeApiCall { countryAPiService.searchByCountryCurrency(countryCurrency) }
     }
 
-    override suspend fun searchByCapital(capitalInfo: String): MyResponse<List<Country>> {
+     suspend fun searchByCapital(capitalInfo: String): MyResponse<List<Country>> {
         return executeApiCall { countryAPiService.searchByCapital(capitalInfo) }
     }
 
-    override suspend fun searchByCountryRegion(countryRegion: String): MyResponse<List<Country>> {
+     suspend fun searchByCountryRegion(countryRegion: String): MyResponse<List<Country>> {
         return executeApiCall { countryAPiService.searchByCountryRegion(countryRegion) }
     }
 

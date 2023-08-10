@@ -20,7 +20,7 @@ import retrofit2.Response
 
 class RemoteCountryRepositoryImpTest {
     private lateinit var mockCountryApiService: CountryAPiService
-    private lateinit var remoteCountryRepository: CountryRepository
+    private lateinit var remoteCountryRepository: RemoteCountryRepositoryImp
     private lateinit var mockLocalRepositoryImp: MockRepositoryImp
 
     @Before

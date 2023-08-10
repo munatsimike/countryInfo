@@ -59,6 +59,7 @@ dependencies {
     def version_room = '2.5.2'
     def retrofit_version = '2.9.0'
     def okhttp3_version = '5.0.0-alpha.11'
+    def arch_core_version = "2.2.0"
 
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation platform("org.jetbrains.kotlin:kotlin-bom:$kotlin_version")
@@ -104,6 +105,9 @@ dependencies {
     // google truth
     testImplementation 'com.google.truth:truth:1.1.2'
     androidTestImplementation 'com.google.truth:truth:1.1.2'
+
+    testImplementation "androidx.arch.core:core-testing:$arch_core_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$arch_core_version"
 
     // Room
     implementation "androidx.room:room-runtime:$version_room"
