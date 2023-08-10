@@ -38,7 +38,6 @@ class CountryDaoTest {
     @Before
     fun setup() {
         hiltRule.inject()
-
     }
 
     @After
@@ -62,6 +61,5 @@ class CountryDaoTest {
         result = countryDao.getAllCountries().getOrAwaitValue()
 
         assertThat(result.size).isGreaterThan(0)
-
     }
 }
