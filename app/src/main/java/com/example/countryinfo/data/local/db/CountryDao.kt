@@ -10,8 +10,7 @@ import com.example.countryinfo.domain.model.Country
 @Dao
 interface CountryDao {
 
-    @OnConflictStrategy()
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveCountriesFromAPi(countries: Country)
 
     @Query("SELECT * FROM country")
