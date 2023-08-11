@@ -1,7 +1,6 @@
 package com.example.countryinfo.data.local.db
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.countryinfo.data.local.repo.LocalCountryRepositoryImp
 import com.example.countryinfo.util.extensions.NetworkUtility.jsonToCountryList
 import com.example.countryinfo.util.test.TestUtilities.jsonEuropeanCountries
 import com.example.countryinfo.util.test.getOrAwaitValue

@@ -22,7 +22,7 @@ object TestNetworkModule {
 
     @Provides
     @Named("testApiCountryService")
-    fun provideCountryApiService(moshi: Moshi,  mockWebserver: MockWebServer): CountryAPiService {
+    fun provideCountryApiService(moshi: Moshi, mockWebserver: MockWebServer): CountryAPiService {
         val retrofit = Retrofit.Builder()
             .baseUrl(mockWebserver.url("/"))
             .addConverterFactory(MoshiConverterFactory.create(moshi))

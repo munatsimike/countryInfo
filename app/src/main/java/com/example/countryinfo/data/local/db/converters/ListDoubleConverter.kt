@@ -16,6 +16,6 @@ class ListDoubleConverter {
 
     @TypeConverter
     fun fromStringToList(doubles: String): List<Double> {
-        return Json.decodeFromString(doubles,)
+        return Json.decodeFromString(doubles)
     }
 }

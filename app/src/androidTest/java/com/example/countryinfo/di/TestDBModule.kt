@@ -3,7 +3,6 @@ package com.example.countryinfo.di
 import android.content.Context
 import androidx.room.Room
 import com.example.countryinfo.data.local.db.AppLocalDatabase
-import com.example.countryinfo.data.local.db.CountryDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

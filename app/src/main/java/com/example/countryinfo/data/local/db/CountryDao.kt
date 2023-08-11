@@ -10,10 +10,10 @@ import com.example.countryinfo.domain.model.Country
 @Dao
 interface CountryDao {
 
-   @OnConflictStrategy()
-   @Insert
-   suspend fun saveCountriesFromAPi(countries: Country)
+    @OnConflictStrategy()
+    @Insert
+    suspend fun saveCountriesFromAPi(countries: Country)
 
-   @Query("SELECT * FROM country")
-   fun getAllCountries(): LiveData<List<Country>>
+    @Query("SELECT * FROM country")
+    fun getAllCountries(): LiveData<List<Country>>
 }

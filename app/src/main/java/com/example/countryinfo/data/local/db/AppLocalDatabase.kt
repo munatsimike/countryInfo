@@ -1,6 +1,5 @@
 package com.example.countryinfo.data.local.db
 
-import androidx.core.view.ContentInfoCompat.Flags
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters

@@ -9,23 +9,23 @@ class MockRepositoryImp : CountryRepository {
         TODO("Not yet implemented")
     }
 
-     suspend fun searchByCountryName(countryName: String): MyResponse<List<Country>> {
+    suspend fun searchByCountryName(countryName: String): MyResponse<List<Country>> {
         TODO("Not yet implemented")
     }
 
-     suspend fun searchByCountryCode(countryCode: Int): MyResponse<List<Country>> {
+    suspend fun searchByCountryCode(countryCode: Int): MyResponse<List<Country>> {
         TODO("Not yet implemented")
     }
 
-     suspend fun searchByCountryCurrency(countryCurrency: String): MyResponse<List<Country>> {
+    suspend fun searchByCountryCurrency(countryCurrency: String): MyResponse<List<Country>> {
         TODO("Not yet implemented")
     }
 
-     suspend fun searchByCapital(capitalInfo: String): MyResponse<List<Country>> {
+    suspend fun searchByCapital(capitalInfo: String): MyResponse<List<Country>> {
         TODO("Not yet implemented")
     }
 
-     suspend fun searchByCountryRegion(countryRegion: String): MyResponse<List<Country>> {
+    suspend fun searchByCountryRegion(countryRegion: String): MyResponse<List<Country>> {
         TODO("Not yet implemented")
     }
 

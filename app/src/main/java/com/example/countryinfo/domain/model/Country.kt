@@ -3,18 +3,18 @@ package com.example.countryinfo.domain.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.countryinfo.domain.model.countryDetails.CapitalInfo
-import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Car
 import com.example.countryinfo.domain.model.countryDetails.CoatOfArms
-import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Demonyms
 import com.example.countryinfo.domain.model.countryDetails.Flags
-import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Language
-import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Gini
-import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Idd
 import com.example.countryinfo.domain.model.countryDetails.Maps
 import com.example.countryinfo.domain.model.countryDetails.Name
 import com.example.countryinfo.domain.model.countryDetails.PostalCode
 import com.example.countryinfo.domain.model.countryDetails.Translations
 import com.example.countryinfo.domain.model.countryDetails.currency.Currency
+import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Car
+import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Demonyms
+import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Gini
+import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Idd
+import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Language
 
 @Entity
 data class Country(

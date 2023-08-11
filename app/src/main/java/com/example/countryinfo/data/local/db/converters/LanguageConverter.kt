@@ -1,7 +1,6 @@
 package com.example.countryinfo.data.local.db.converters
 
 import androidx.room.TypeConverter
-import com.example.countryinfo.domain.model.countryDetails.Maps
 import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Language
 import com.google.gson.Gson
 
