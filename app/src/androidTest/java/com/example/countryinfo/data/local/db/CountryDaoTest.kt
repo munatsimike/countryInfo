@@ -26,8 +26,6 @@ class CountryDaoTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    lateinit var localRepository: LocalCountryRepositoryImp
-
     @Inject
     @Named("test_db")
     lateinit var localDB: AppLocalDatabase

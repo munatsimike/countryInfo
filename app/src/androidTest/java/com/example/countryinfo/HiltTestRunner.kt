@@ -8,8 +8,6 @@ import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.runner.RunWith
 
-@HiltAndroidTest
-@RunWith(AndroidJUnit4::class)
 class HiltTestRunner: AndroidJUnitRunner() {
     override fun newApplication(
         cl: ClassLoader?,

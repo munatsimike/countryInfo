@@ -19,7 +19,7 @@ import com.example.countryinfo.domain.model.countryDetails.currency.Currency
 @Entity
 data class Country(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int?,
     val altSpellings: List<String>?,
     val capitalInfo: CapitalInfo?,
     val car: Car?,

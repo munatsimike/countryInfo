@@ -1,7 +1,7 @@
 package com.example.countryinfo.data.common
 
-import com.example.countryinfo.domain.model.Country
 import com.example.countryinfo.data.remote.repo.MyResponse
+import com.example.countryinfo.domain.model.Country
 
 interface CountryRepository {
     suspend fun getAllCountries(): MyResponse<List<Country>>

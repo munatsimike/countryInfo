@@ -1,6 +1,7 @@
 package com.example.countryinfo.data.remote.api
 
 import com.example.countryinfo.domain.model.Country
+import com.example.countryinfo.util.extensions.NetworkUtility.jsonToCountryList
 import com.example.countryinfo.util.test.TestUtilities.jsonEuropeanCountries
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -46,7 +47,7 @@ class CountryServiceTest {
             httpResponse(testCountries) { countryAPiService.getAllCountries() }
         assertThat(response.isSuccessful).isTrue()
         assertThat(response.body()).isNotEmpty()
-        assertThat(response.body()).isEqualTo(testCountries)
+        assertThat(response.body()).isEqualTo(testCountries.jsonToCountryList())
     }
 
     @Test
