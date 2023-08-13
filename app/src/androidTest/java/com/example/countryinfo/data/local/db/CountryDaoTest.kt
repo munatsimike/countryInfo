@@ -7,7 +7,6 @@ import com.example.countryinfo.util.test.getOrAwaitValue
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Before
@@ -42,7 +41,6 @@ class CountryDaoTest {
         localDB.close()
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun should_Read_And_Write_To_DB() {
         val countries = jsonEuropeanCountries().jsonToCountryList()
@@ -51,12 +49,10 @@ class CountryDaoTest {
         assertThat(result.size).isEqualTo(0)
 
         runTest {
-            for (country in countries) {
-                countryDao.saveCountriesFromAPi(country)
-            }
+                countryDao.saveCountriesFromAPi(countries)
         }
 
         result = countryDao.getAllCountries().getOrAwaitValue()
-        assertThat(result.size).isGreaterThan(0)
+        assertThat(result.size).isEqualTo(53)
     }
 }

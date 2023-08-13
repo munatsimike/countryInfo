@@ -100,7 +100,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
 
     // kotlinx.coroutines.test for testing with coroutines
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 
     // google truth
     testImplementation 'com.google.truth:truth:1.1.2'
@@ -128,5 +129,8 @@ dependencies {
 
     // gson converter
     implementation 'com.google.code.gson:gson:2.9.0'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
 
 }

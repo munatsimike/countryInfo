@@ -3,7 +3,6 @@ package com.example.countryinfo.data.local.repo
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.countryinfo.data.local.db.CountryDao
-import com.example.countryinfo.data.remote.repo.MyResponse
 import com.example.countryinfo.domain.model.Country
 import com.example.countryinfo.util.extensions.NetworkUtility.jsonToCountryList
 import com.example.countryinfo.util.test.TestUtilities.jsonEuropeanCountries
@@ -40,15 +39,12 @@ class LocalCountryRepositoryImpTest {
         val liveDataResponse: LiveData<List<Country>> = mutableLiveDataResponse
 
         coEvery { mockKCountryDao.getAllCountries() } returns liveDataResponse
-        coEvery { localCountryRepositoryImp.saveCountriesToLocalDB(data) } just runs
+        coEvery { localCountryRepositoryImp.saveCountriesFromApiToLocalDb(data) } just runs
 
         runTest {
-            localCountryRepositoryImp.saveCountriesToLocalDB(data)
-            val result2 = localCountryRepositoryImp.getAllCountries()
-
-            assertThat(result2).isInstanceOf(MyResponse.Success::class.java)
-            val response = (result2 as MyResponse.Success).data
-            assertThat(response).isEqualTo(data)
+            localCountryRepositoryImp.saveCountriesFromApiToLocalDb(data)
+            val result2 = localCountryRepositoryImp.getAllCountriesFromLocalDb()
+            assertThat(result2.value).isEqualTo(data)
         }
     }
 }

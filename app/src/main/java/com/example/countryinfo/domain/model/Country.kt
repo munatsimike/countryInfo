@@ -16,7 +16,7 @@ import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Gini
 import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Idd
 import com.example.countryinfo.domain.model.countryDetails.nativeLanguage.Language
 
-@Entity
+@Entity(tableName = "country_table")
 data class Country(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,

@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class TestDBModule {
-
     @Provides
     @Singleton
     @Named("test_db")
@@ -22,6 +21,4 @@ class TestDBModule {
         return Room.databaseBuilder(context, AppLocalDatabase::class.java, "test_db")
             .allowMainThreadQueries().build()
     }
-
-
 }

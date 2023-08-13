@@ -9,14 +9,16 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppDatabaseModule {
     @Provides
-    fun provideAppDb(@ApplicationContext context: Context): AppLocalDatabase =
-        Room.databaseBuilder(context = context, AppLocalDatabase::class.java, "country_db").build()
-
+    @Singleton
+    fun provideAppDb(@ApplicationContext context: Context): AppLocalDatabase {
+      return  Room.databaseBuilder(context = context, AppLocalDatabase::class.java, "country_db").build()
+    }
     @Provides
     fun provideCountryDao(appLocalDatabase: AppLocalDatabase): CountryDao =
         appLocalDatabase.countryDao

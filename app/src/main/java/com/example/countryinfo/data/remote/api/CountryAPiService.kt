@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface CountryAPiService {
-    @GET("All")
+    @GET("all")
     suspend fun getAllCountries(): Response<List<Country>>
 
     @GET("name/{name}?fullText=true")

@@ -1,6 +1,7 @@
 package com.example.countryinfo.data.remote.repo
 
-import com.example.countryinfo.data.common.MockRepositoryImp
+import com.example.countryinfo.data.local.repo.LocalCountryRepository
+import com.example.countryinfo.util.test.MockLocalRepository
 import com.example.countryinfo.data.remote.api.CountryAPiService
 import com.example.countryinfo.domain.model.Country
 import com.example.countryinfo.util.extensions.NetworkUtility.jsonToCountryList
@@ -20,12 +21,12 @@ import retrofit2.Response
 class RemoteCountryRepositoryImpTest {
     private lateinit var mockCountryApiService: CountryAPiService
     private lateinit var remoteCountryRepository: RemoteCountryRepositoryImp
-    private lateinit var mockLocalRepositoryImp: MockRepositoryImp
+    private lateinit var mockLocalRepositoryImp: LocalCountryRepository
 
     @Before
     fun setup() {
         mockCountryApiService = mockk()
-        mockLocalRepositoryImp = MockRepositoryImp()
+        mockLocalRepositoryImp = MockLocalRepository()
         remoteCountryRepository =
             RemoteCountryRepositoryImp(mockCountryApiService, mockLocalRepositoryImp)
     }
@@ -35,7 +36,7 @@ class RemoteCountryRepositoryImpTest {
         val testCountriesList = jsonEuropeanCountries().jsonToCountryList()
         val countriesList = getCountryList(
             { mockCountryApiService.getAllCountries() },
-            { remoteCountryRepository.getAllCountries() },
+            { remoteCountryRepository.getAllCountriesFromApi() },
             testCountriesList
         )
         assertThat(countriesList.isNotEmpty()).isTrue()
@@ -108,15 +109,13 @@ class RemoteCountryRepositoryImpTest {
 
     private fun getCountryList(
         mockAPiCall: suspend () -> Response<List<Country>>,
-        repositoryCall: suspend () -> MyResponse<List<Country>>,
+        repositoryCall: suspend () -> List<Country>,
         countryList: List<Country>
     ): List<Country> {
         coEvery { mockAPiCall.invoke() } returns Response.success(
             countryList
         )
 
-        val result = runBlocking { repositoryCall.invoke() }
-        require(result is MyResponse.Success)
-        return result.data
+        return runBlocking { repositoryCall.invoke() }
     }
 }

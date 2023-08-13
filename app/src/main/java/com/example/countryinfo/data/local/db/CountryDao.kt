@@ -11,8 +11,8 @@ import com.example.countryinfo.domain.model.Country
 interface CountryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveCountriesFromAPi(countries: Country)
+    suspend fun saveCountriesFromAPi(country: List<Country>)
 
-    @Query("SELECT * FROM country")
+    @Query("SELECT * FROM country_table")
     fun getAllCountries(): LiveData<List<Country>>
 }
