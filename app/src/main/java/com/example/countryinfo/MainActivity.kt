@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.countryinfo.ui.MainScreen.DisplayCountries
+import com.example.countryinfo.ui.screens.main.components.MainScreen
 import com.example.countryinfo.ui.theme.CountryInfoTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    DisplayCountries()
+                    MainScreen()
                 }
             }
         }
